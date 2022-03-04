@@ -61,7 +61,7 @@ package leetcode.editor.cn;
 //leetcode submit region begin(Prohibit modification and deletion)
 
 /**
- * @author lizy19
+ * @author george
  */
 public class SubArrayRangesSolution {
 

@@ -52,7 +52,7 @@ package leetcode.editor.cn;
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  *
- * @author lizy19
+ * @author george
  */
 public class AddTwoNumbersSolution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

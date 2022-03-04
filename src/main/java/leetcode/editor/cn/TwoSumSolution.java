@@ -49,7 +49,7 @@ import java.util.Map;
 //leetcode submit region begin(Prohibit modification and deletion)
 
 /**
- * @author lizy19
+ * @author george
  */
 public class TwoSumSolution {
     public static void main(String[] args) {
