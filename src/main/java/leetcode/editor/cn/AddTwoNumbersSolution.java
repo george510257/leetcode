@@ -76,13 +76,10 @@ public class AddTwoNumbersSolution {
             listNode2 = l2.next;
         }
         int sum = val1 + val2 + i;
-        int temp = 0;
-        if (sum > 9) {
-            sum = sum - 10;
-            temp = 1;
-        }
+        int val = sum % 10;
+        int temp = sum / 10;
         ListNode node = new ListNode();
-        node.val = sum;
+        node.val = val;
         node.next = addTwoNumber(temp, listNode1, listNode2);
         return node;
     }
