@@ -38,6 +38,8 @@ package leetcode.editor.cn;
 // 
 // Related Topics 哈希表 字符串 滑动窗口 👍 7023 👎 0
 
+import java.util.HashMap;
+import java.util.Map;
 //leetcode submit region begin(Prohibit modification and deletion)
 
 /**
@@ -45,8 +47,20 @@ package leetcode.editor.cn;
  */
 public class LengthOfLongestSubstringSolution {
     public int lengthOfLongestSubstring(String s) {
-
-        return 0;
+        int maxLength = 0;
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            String key = String.valueOf(s.charAt(i));
+            if (map.containsKey(key)) {
+                int length = i - map.get(key);
+                maxLength = Math.max(maxLength, length);
+            }
+            map.put(key, i);
+        }
+        for (Integer index : map.values()) {
+            maxLength = Math.max(maxLength, s.length() - index);
+        }
+        return maxLength;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
