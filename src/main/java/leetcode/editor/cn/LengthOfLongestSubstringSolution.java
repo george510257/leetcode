@@ -40,6 +40,7 @@ package leetcode.editor.cn;
 
 import java.util.HashMap;
 import java.util.Map;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 
 /**
@@ -48,17 +49,15 @@ import java.util.Map;
 public class LengthOfLongestSubstringSolution {
     public int lengthOfLongestSubstring(String s) {
         int maxLength = 0;
-        Map<String, Integer> map = new HashMap<>();
+        int start = 0;
+        Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
-            String key = String.valueOf(s.charAt(i));
+            char key = s.charAt(i);
             if (map.containsKey(key)) {
-                int length = i - map.get(key);
-                maxLength = Math.max(maxLength, length);
+                start = Math.max(start, map.get(key) + 1);
             }
+            maxLength = Math.max(maxLength, i - start + 1);
             map.put(key, i);
-        }
-        for (Integer index : map.values()) {
-            maxLength = Math.max(maxLength, s.length() - index);
         }
         return maxLength;
     }
