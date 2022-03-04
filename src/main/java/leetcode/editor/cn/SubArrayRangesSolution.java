@@ -57,10 +57,13 @@ package leetcode.editor.cn;
 ////
 //// 进阶：你可以设计一种时间复杂度为 O(n) 的解决方案吗？ 
 //// Related Topics 栈 数组 单调栈 👍 71 👎 0
-//
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class SubArrayRangesSolution {
+
+/**
+ * @author lizy19
+ */
+public class SubArrayRangesSolution {
 
     public static void main(String[] args) {
         int[] nums = new int[]{4, -2, -3, 4, 1};

@@ -47,7 +47,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class TwoSumSolution {
+
+/**
+ * @author lizy19
+ */
+public class TwoSumSolution {
     public static void main(String[] args) {
         int[] nums = new int[]{2, 7, 11, 15};
         int[] result = twoSum(nums, 18);
