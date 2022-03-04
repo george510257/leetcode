@@ -56,8 +56,35 @@ package leetcode.editor.cn;
  */
 public class AddTwoNumbersSolution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        return addTwoNumber(0, l1, l2);
+    }
 
-        return null;
+    private ListNode addTwoNumber(int i, ListNode l1, ListNode l2) {
+        if (i == 0 && l1 == null && l2 == null) {
+            return null;
+        }
+        int val1 = 0;
+        ListNode listNode1 = null;
+        if (l1 != null) {
+            val1 = l1.val;
+            listNode1 = l1.next;
+        }
+        int val2 = 0;
+        ListNode listNode2 = null;
+        if (l2 != null) {
+            val2 = l2.val;
+            listNode2 = l2.next;
+        }
+        int sum = val1 + val2 + i;
+        int temp = 0;
+        if (sum > 9) {
+            sum = sum - 10;
+            temp = 1;
+        }
+        ListNode node = new ListNode();
+        node.val = sum;
+        node.next = addTwoNumber(temp, listNode1, listNode2);
+        return node;
     }
 
     public static class ListNode {
