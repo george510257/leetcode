@@ -48,8 +48,28 @@ package leetcode.editor.cn;
 //leetcode submit region begin(Prohibit modification and deletion)
 class MinDistanceSolution {
     public int minDistance(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        if (m == 0 || n == 0) {
+            return Math.max(m, n);
+        }
 
-        return 0;
+        int[][] temp = new int[m + 1][n + 1];
+
+        for (int i = 0; i < m + 1; i++) {
+            for (int j = 0; j < n + 1; j++) {
+                if (i == 0) {
+                    temp[i][j] = j;
+                } else if (j == 0) {
+                    temp[i][j] = i;
+                } else if ((word1.charAt(i - 1) != word2.charAt(j - 1))) {
+                    temp[i][j] = Math.min(temp[i - 1][j], Math.min(temp[i][j - 1], temp[i - 1][j - 1])) + 1;
+                } else {
+                    temp[i][j] = Math.min(temp[i - 1][j], Math.min(temp[i][j - 1], temp[i - 1][j - 1] - 1)) + 1;
+                }
+            }
+        }
+        return temp[m][n];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
