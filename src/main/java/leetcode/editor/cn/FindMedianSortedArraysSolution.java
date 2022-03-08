@@ -39,6 +39,10 @@ package leetcode.editor.cn;
 // Related Topics 数组 二分查找 分治 👍 5081 👎 0
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
+/**
+ * @author george
+ */
 public class FindMedianSortedArraysSolution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
